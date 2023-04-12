@@ -19,7 +19,7 @@ export default function serviceListReducer(state = initialState, action) {
     case FILTER_SERVICE:
       const line = action.payload;
       if(line.length > 0) {
-        return state.filter(e => e.name.toLowerCase().startsWith(line))
+        return state.filter(e => e.name.toLowerCase().includes(line))
       } else {
         return initialState;
       }
